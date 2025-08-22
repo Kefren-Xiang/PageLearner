@@ -1,2 +1,2 @@
 # PageLearner
-It is a Chrome extension for website utils
+The API KEY in background.js is emitted, please fetch one for yourself.
