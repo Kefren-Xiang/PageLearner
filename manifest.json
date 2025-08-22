@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "PageLearner",
+  "version": "0.4.0",
+  "description": "Page-embedded drawer + Qwen chat (no Side Panel API).",
+  "action": {
+    "default_title": "PageLearner",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://dashscope.aliyuncs.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content/inject.js"],
+      "css": ["content/inject.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
